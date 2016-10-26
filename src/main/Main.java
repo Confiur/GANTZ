@@ -21,7 +21,7 @@ public class Main {
     public static ModelMain modelMain;
     public static ViewMain viewMain;
     public static ControllerMain controllerMain;
-    
+    //test
     public static void main(String [] lfar){
         modelProductos = new ModelProductos();
         viewProductos = new ViewProductos();
