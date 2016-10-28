@@ -32,10 +32,6 @@ public class ViewProductos extends javax.swing.JPanel {
         jbtn_editar = new javax.swing.JButton();
         jbtn_eliminar = new javax.swing.JButton();
         jbtn_buscar = new javax.swing.JButton();
-        jbtn_inicio = new javax.swing.JButton();
-        jbtn_retroceder = new javax.swing.JButton();
-        jbtn_avanzar = new javax.swing.JButton();
-        jbtn_final = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jt_tabla = new javax.swing.JTable();
 
@@ -69,14 +65,6 @@ public class ViewProductos extends javax.swing.JPanel {
             }
         });
 
-        jbtn_inicio.setText("|<<");
-
-        jbtn_retroceder.setText("<");
-
-        jbtn_avanzar.setText(">");
-
-        jbtn_final.setText(">>|");
-
         jt_tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -101,36 +89,25 @@ public class ViewProductos extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 21, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(208, 208, 208)
-                        .addComponent(jLabel1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jbtn_inicio)
-                        .addGap(18, 18, 18)
-                        .addComponent(jbtn_retroceder)
-                        .addGap(18, 18, 18)
-                        .addComponent(jbtn_avanzar)
-                        .addGap(18, 18, 18)
-                        .addComponent(jbtn_final)
-                        .addGap(107, 107, 107))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(181, 181, 181)
                         .addComponent(jbtn_agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jbtn_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jbtn_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jbtn_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(152, 152, 152))))
+                        .addComponent(jbtn_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(244, 244, 244)
+                        .addComponent(jLabel1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,15 +120,9 @@ public class ViewProductos extends javax.swing.JPanel {
                     .addComponent(jbtn_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jbtn_agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jbtn_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(62, 62, 62)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbtn_inicio)
-                    .addComponent(jbtn_retroceder)
-                    .addComponent(jbtn_avanzar)
-                    .addComponent(jbtn_final))
-                .addGap(34, 34, 34))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
+                .addGap(75, 75, 75))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -176,13 +147,9 @@ public class ViewProductos extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JButton jbtn_agregar;
-    public javax.swing.JButton jbtn_avanzar;
     public javax.swing.JButton jbtn_buscar;
     public javax.swing.JButton jbtn_editar;
     public javax.swing.JButton jbtn_eliminar;
-    public javax.swing.JButton jbtn_final;
-    public javax.swing.JButton jbtn_inicio;
-    public javax.swing.JButton jbtn_retroceder;
     public javax.swing.JTable jt_tabla;
     // End of variables declaration//GEN-END:variables
 }

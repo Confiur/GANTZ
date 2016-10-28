@@ -13,7 +13,7 @@ import sax.DBConnection;
  */
 public class ModelProductos {
     public DBConnection conection = new DBConnection(3306,"localhost", "acme", "root", "1234");
-    public DefaultTableModel tableModel = new DefaultTableModel(new String[]{"id_producto","producto","descripcion","precio_compra","precio_venta","existencias"},0);
+    public DefaultTableModel tableModel = new DefaultTableModel(new String[]{"Id_producto","Producto","Descripcion","Precio_compra","Precio_venta","Existencias"},0);
     
     private int id_producto;
     private String producto;
@@ -109,25 +109,6 @@ public class ModelProductos {
     public void moveNext(){
         conection.moveNext();
         setValues();
-        poputable();
-    }
-    
-    public void movePrevious(){
-        conection.movePrevious();
-        setValues();
-        poputable();
-    }
-    
-    public void moveFirst(){
-        conection.moveFirst();
-        setValues();
-        poputable();
-    }
-    
-    public void moveLast(){
-        conection.moveLast();
-        setValues();
-        poputable();
     }
     
     public void initValues(){

@@ -26,10 +26,6 @@ public class ControllerProductos implements ActionListener{
         this.viewProductos = viewProductos;
         this.modelProductos = modelProductos;
         
-        this.viewProductos.jbtn_inicio.addActionListener(this);
-        this.viewProductos.jbtn_retroceder.addActionListener(this);
-        this.viewProductos.jbtn_avanzar.addActionListener(this);
-        this.viewProductos.jbtn_final.addActionListener(this);
         this.viewProductos.jbtn_agregar.addActionListener(this);
         this.viewProductos.jbtn_eliminar.addActionListener(this);
         this.viewProductos.jbtn_editar.addActionListener(this);
@@ -39,52 +35,32 @@ public class ControllerProductos implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource()==viewProductos.jbtn_inicio){
-           accionInicio();
+        if(e.getSource()==viewProductos.jbtn_agregar){
+            JOptionPane.showMessageDialog(viewProductos, viewAgregar);
+            modelProductos.setProducto(viewAgregar.jtf_nombre.getText());
+            modelProductos.setDescripcion(viewAgregar.jta_descripcion.getText());
+            modelProductos.setPrecio_compra(libreria.stringToInt(viewAgregar.jtf_compra.getText()));
+            modelProductos.setPrecio_venta(libreria.stringToInt(viewAgregar.jtf_venta.getText()));
+            modelProductos.setExistencias(libreria.stringToInt(viewAgregar.jtf_cantidad.getText()));
+            accionAgregar();
         }
-       else if(e.getSource()==viewProductos.jbtn_retroceder){
-           accionRetroceder();
-       }
-       else if(e.getSource()==viewProductos.jbtn_avanzar){
-           accionAvanzar();
-       }
-       else if(e.getSource()==viewProductos.jbtn_final){
-           accionFinal();
-       }
-       else if(e.getSource()==viewProductos.jbtn_agregar){
-           JOptionPane.showMessageDialog(viewProductos, viewAgregar);
-           if(e.getSource()==viewAgregar.jbtn_Insertar){
-           accionAgregar();
-           }
-       }
     }
     
     public void accionAgregar(){
-        modelProductos.setProducto(viewAgregar.jtf_nombre.getText());
-        modelProductos.setDescripcion(viewAgregar.jta_descripcion.getText());
-        modelProductos.setPrecio_compra(libreria.stringToInt(viewAgregar.jtf_compra.getText()));
-        modelProductos.setPrecio_venta(libreria.stringToInt(viewAgregar.jtf_venta.getText()));
-        modelProductos.setExistencias(libreria.stringToInt(viewAgregar.jtf_cantidad.getText()));
+        modelProductos.conection.executeUpdate("insert into productos (producto, descripcion, precio_compra, precio_venta, existencias) values('"+modelProductos.getProducto()+"','"+modelProductos.getDescripcion()+"','"+modelProductos.getPrecio_compra()+"','"+modelProductos.getPrecio_venta()+"','"+modelProductos.getExistencias()+"');");
+        clear();
     }
     
-    public void accionInicio(){
-        modelProductos.moveFirst();
-        modelProductos.setValues();
+    public void clear(){
+        //limpia la tabla jt_table
+        while(modelProductos.tableModel.getRowCount() >0){
+            modelProductos.tableModel.removeRow(0);
+        }
+        initView();
     }
     
-    public void accionRetroceder(){
-        modelProductos.movePrevious();
-        modelProductos.setValues();
-    }
-    
-    public void accionAvanzar(){
-        modelProductos.moveNext();
-        modelProductos.setValues();
-    }
-    
-    public void accionFinal(){
-        modelProductos.moveLast();
-        modelProductos.setValues();
+    public void accionEliminar(){
+        
     }
     
     public void initView(){
