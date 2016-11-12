@@ -27,36 +27,44 @@ public class ViewMain extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jm_menu = new javax.swing.JMenu();
+        jm_usuario = new javax.swing.JMenu();
         jmi_productos = new javax.swing.JMenuItem();
         jmi_clientes = new javax.swing.JMenuItem();
-        jmi_proovedores = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        jmi_proveedores = new javax.swing.JMenuItem();
+        jm_ingresar = new javax.swing.JMenu();
+        jmi_compras = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("GANTZ");
-        setBackground(new java.awt.Color(255, 255, 255));
-        setLocation(new java.awt.Point(0, 0));
+        setPreferredSize(new java.awt.Dimension(950, 500));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/00000000000000gantz-logo.jpg"))); // NOI18N
+        jMenuBar1.setBackground(new java.awt.Color(255, 255, 204));
 
-        jm_menu.setText("Catlogos");
+        jm_usuario.setBackground(new java.awt.Color(255, 0, 0));
+        jm_usuario.setText("Usuario");
 
         jmi_productos.setText("Productos");
-        jm_menu.add(jmi_productos);
+        jm_usuario.add(jmi_productos);
 
         jmi_clientes.setText("Clientes");
-        jm_menu.add(jmi_clientes);
+        jm_usuario.add(jmi_clientes);
 
-        jmi_proovedores.setText("Proovedores");
-        jm_menu.add(jmi_proovedores);
+        jmi_proveedores.setText("Proveedores");
+        jm_usuario.add(jmi_proveedores);
 
-        jMenuBar1.add(jm_menu);
+        jMenuBar1.add(jm_usuario);
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        jm_ingresar.setText("Ventas");
+
+        jmi_compras.setText("Ventas");
+        jmi_compras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_comprasActionPerformed(evt);
+            }
+        });
+        jm_ingresar.add(jmi_compras);
+
+        jMenuBar1.add(jm_ingresar);
 
         setJMenuBar(jMenuBar1);
 
@@ -64,21 +72,19 @@ public class ViewMain extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jLabel1)
-                .addContainerGap(45, Short.MAX_VALUE))
+            .addGap(0, 900, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel1)
-                .addContainerGap(28, Short.MAX_VALUE))
+            .addGap(0, 479, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jmi_comprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_comprasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmi_comprasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -116,12 +122,12 @@ public class ViewMain extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    public javax.swing.JMenu jm_menu;
+    protected javax.swing.JMenu jm_ingresar;
+    public javax.swing.JMenu jm_usuario;
     public javax.swing.JMenuItem jmi_clientes;
+    public javax.swing.JMenuItem jmi_compras;
     public javax.swing.JMenuItem jmi_productos;
-    public javax.swing.JMenuItem jmi_proovedores;
+    public javax.swing.JMenuItem jmi_proveedores;
     // End of variables declaration//GEN-END:variables
 }
