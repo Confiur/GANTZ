@@ -17,7 +17,7 @@ create table clientes(
  	)ENGINE=MyISAM DEFAULT CHARSET=utf8;
  
  create table ventas(
- 	id_vetas int(4) PRIMARY KEY not null AUTO_INCREMENT,
+ 	id_vetas int(4) PRIMARY KEY not null AUTO_INCREMENT
  	fecha date not null,
  	id_cliente int(4) not null,
  	subtotal double(7,2) not null,
@@ -28,7 +28,7 @@ create table clientes(
  
  create table productos(
 	id_producto int (4) PRIMARY KEY not null AUTO_INCREMENT,
-	producto varchar (30) not null,
+	producto varchar (30) not null unique,
 	descripcion varchar (30) not null,
 	precio_compra double not null,
 	precio_venta double not null,
@@ -48,16 +48,16 @@ create table clientes(
  
  create table proveedores(
  	id_proveedor int(4) PRIMARY KEY not null AUTO_INCREMENT,
- 	nombre varchar(30) not null,
- 	RFC varchar(15) not null,
+ 	nombre varchar(30) not null unique,
+ 	RFC varchar(15) not null unique,
  	calle varchar(20) not null,
 	num int(5) not null,
  	colonia varchar(20) not null,
  	ciudad varchar(20) not null,
  	estado varchar(20) not null,
- 	nombre_contacto varchar(70) not null,
- 	telefono int(15) not null,
- 	e_mail varchar(40) not null
+ 	nombre_contacto varchar(70) not null unique,
+ 	telefono int(15) not null unique,
+ 	e_mail varchar(40) not null unique
  	)ENGINE=MyISAM DEFAULT CHARSET=utf8;
  
  create table compras(

@@ -23,6 +23,7 @@ public class ControllerMain implements ActionListener{
         this.modelMain = modelMain;
         this.views = views;
         this.viewMain.jmi_productos.addActionListener(this);
+        this.viewMain.jmi_proovedores.addActionListener(this);
         initView();
     }
     
@@ -31,11 +32,19 @@ public class ControllerMain implements ActionListener{
         if(e.getSource()== viewMain.jmi_productos){
             jmi_productos();
         }
+        else if (e.getSource()==viewMain.jmi_proovedores)
+            jmi_proveedores();
     }
 
     
     public void jmi_productos(){
         this.viewMain.setContentPane(views[0]);
+        this.viewMain.revalidate();
+        this.viewMain.repaint();
+    }
+    
+    public void jmi_proveedores(){
+        this.viewMain.setContentPane(views[1]);
         this.viewMain.revalidate();
         this.viewMain.repaint();
     }

@@ -1,0 +1,16 @@
+------------------------------
+---------CUIDADO--------------
+------------------------------
+
+En la carpeta GANTZ 2.0\GANTZ\src\bd
+se encuentra el script de la base de datos
+
+Para visualizar los reportes necesitas tener instalado
+el pluggin de iReport, de lo contrario esto no funcionara
+
+Cuidado con las librerias que se encuentran en
+la carpeta GANTZ / libreries /
+
+Si la conexion no se da, es porque en mi maquina tengo
+que usar el puerto 3307, y posiblemente estes usando
+el 3306, modifica en el codigo del proyecto.

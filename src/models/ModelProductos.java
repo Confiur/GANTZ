@@ -7,12 +7,8 @@ package models;
 import javax.swing.table.DefaultTableModel;
 import sax.DBConnection;
 
-/**
- *
- * @author megam
- */
 public class ModelProductos {
-    public DBConnection conection = new DBConnection(3306,"localhost", "acme", "root", "1234");
+    public DBConnection conection = new DBConnection(3307,"localhost", "acme", "root", "1234");
     public DefaultTableModel tableModel = new DefaultTableModel(new String[]{"id_producto","producto","descripcion","precio_compra","precio_venta","existencias"},0);
     
     private int id_producto;

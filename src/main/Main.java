@@ -17,6 +17,13 @@ public class Main {
     public static ModelProductos modelProductos;
     public static ViewProductos viewProductos;
     public static ControllerProductos controllerProductos;
+   
+    public static ModelProveedores modelProveedores;
+    public static ViewProveedores viewProveedores;
+    public static ControllerProveedores controllerProveedores;
+    public static viewEliminarProve viewEliminarProve;
+    public static viewBuscarProvee buscaProveedores;
+    public static viewProveedoresEditar editarProv;
     
     public static ModelMain modelMain;
     public static ViewMain viewMain;
@@ -27,8 +34,16 @@ public class Main {
         viewProductos = new ViewProductos();
         controllerProductos = new ControllerProductos(modelProductos, viewProductos);
         
-        JPanel views[] = new JPanel[1];
+        modelProveedores = new ModelProveedores();
+        viewProveedores = new ViewProveedores();
+        viewEliminarProve = new viewEliminarProve();
+        buscaProveedores = new viewBuscarProvee();
+        editarProv = new viewProveedoresEditar();
+        controllerProveedores = new ControllerProveedores(modelProveedores, viewProveedores, viewEliminarProve, buscaProveedores,editarProv);
+        
+        JPanel views[] = new JPanel[5];
         views[0] = viewProductos;
+        views[1] = viewProveedores;
         
         viewMain = new ViewMain();
         modelMain = new ModelMain();
