@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package models;
+
 import javax.swing.table.DefaultTableModel;
 import sax.DBConnection;
 
@@ -11,9 +12,10 @@ import sax.DBConnection;
  *
  * @author megam
  */
-public class ModelProductos {
+public class ModelCompras {
     public DBConnection conection = new DBConnection(3306,"localhost", "acme", "root", "1234");
-    public DefaultTableModel tableModel = new DefaultTableModel(new String[]{"Id_producto","Producto","Descripcion","Precio compra","Precio venta","Existencias"},0);
+    public DefaultTableModel tableModel = new DefaultTableModel(new String[]{"Id_producto","Producto","Descripcion","Precio venta","Existencias"},0);
+    public DefaultTableModel tableModel1 = new DefaultTableModel(new String[]{"Producto","Precio","Cantidad"},0);
     
     private int id_producto;
     private String producto;
@@ -21,6 +23,9 @@ public class ModelProductos {
     private double precio_compra;
     private double precio_venta;
     private int existencias;
+    private int cantidad;
+    private double iva = 0.00;
+    private double total = 0.00;
     
     /**
      * @return the id_producto
@@ -113,7 +118,7 @@ public class ModelProductos {
     }
     
     public void initValues(){
-        conection.executeQuery("SELECT id_producto, producto, descripcion, precio_compra, precio_venta, existencias FROM productos;");
+        conection.executeQuery("SELECT id_producto, producto, descripcion, precio_venta, existencias FROM productos;");
         poputable();
         conection.moveNext();
         setValues();
@@ -123,15 +128,68 @@ public class ModelProductos {
         id_producto = conection.getInteger("id_producto");
         producto = conection.getString("producto");
         descripcion = conection.getString("descripcion");
-        precio_compra = conection.getDouble("precio_compra");
         precio_venta = conection.getDouble("precio_venta");
         existencias = conection.getInteger("existencias");
+    }
+    
+    public void setValues1(){
+        producto = conection.getString("producto");
+        precio_venta = conection.getDouble("precio_venta");
     }
     
     public void poputable(){
     while(conection.moveNext()){
             setValues();
-            tableModel.addRow(new Object[]{id_producto, producto, descripcion, precio_compra, precio_venta, existencias});
+            tableModel.addRow(new Object[]{id_producto, producto, descripcion, precio_venta, existencias});
         }
+    }
+    
+    public void poputable1(){
+        while(conection.moveNext()){
+            setValues1();
+            tableModel1.addRow(new Object[]{producto, precio_venta,cantidad});
+        }
+    }
+
+    /**
+     * @return the cantidad
+     */
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    /**
+     * @param cantidad the cantidad to set
+     */
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    /**
+     * @return the iva
+     */
+    public double getIva() {
+        return iva;
+    }
+
+    /**
+     * @param iva the iva to set
+     */
+    public void setIva(double iva) {
+        this.iva = iva;
+    }
+
+    /**
+     * @return the total
+     */
+    public double getTotal() {
+        return total;
+    }
+
+    /**
+     * @param total the total to set
+     */
+    public void setTotal(double total) {
+        this.total = total;
     }
 }
