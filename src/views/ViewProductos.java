@@ -27,44 +27,29 @@ public class ViewProductos extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jbtn_agregar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jbtn_editar = new javax.swing.JButton();
-        jbtn_eliminar = new javax.swing.JButton();
         jbtn_buscar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jt_tabla = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
+        jbtn_agregar = new javax.swing.JButton();
+        jbtn_eliminar = new javax.swing.JButton();
+        jbtn_editar = new javax.swing.JButton();
+        jtf_buscar = new javax.swing.JFormattedTextField();
 
-        jbtn_agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/agregar.jpg"))); // NOI18N
-        jbtn_agregar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtn_agregarActionPerformed(evt);
-            }
-        });
+        setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel1.setText("Productos");
 
-        jbtn_editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/editar.png"))); // NOI18N
-        jbtn_editar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtn_editarActionPerformed(evt);
-            }
-        });
-
-        jbtn_eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/eliminar.png"))); // NOI18N
-        jbtn_eliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtn_eliminarActionPerformed(evt);
-            }
-        });
-
-        jbtn_buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/busqueda.jpg"))); // NOI18N
+        jbtn_buscar.setBackground(new java.awt.Color(255, 255, 255));
+        jbtn_buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/busqueda.jpg"))); // NOI18N
         jbtn_buscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtn_buscarActionPerformed(evt);
             }
         });
 
+        jt_tabla.setBackground(new java.awt.Color(204, 204, 255));
         jt_tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -75,81 +60,91 @@ public class ViewProductos extends javax.swing.JPanel {
                 "id_producto", "producto", "descripcion", "precio_compra", "precio_venta", "Existencia"
             }
         ));
+        jt_tabla.setEnabled(false);
         jScrollPane1.setViewportView(jt_tabla);
-        if (jt_tabla.getColumnModel().getColumnCount() > 0) {
-            jt_tabla.getColumnModel().getColumn(0).setHeaderValue("id_producto");
-            jt_tabla.getColumnModel().getColumn(1).setHeaderValue("producto");
-            jt_tabla.getColumnModel().getColumn(2).setHeaderValue("descripcion");
-            jt_tabla.getColumnModel().getColumn(3).setHeaderValue("precio_compra");
-            jt_tabla.getColumnModel().getColumn(4).setHeaderValue("precio_venta");
-            jt_tabla.getColumnModel().getColumn(5).setHeaderValue("Existencia");
-        }
+
+        jLabel2.setText("Buscar/Editar:");
+
+        jbtn_agregar.setBackground(new java.awt.Color(255, 255, 255));
+        jbtn_agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/agregar.jpg"))); // NOI18N
+
+        jbtn_eliminar.setBackground(new java.awt.Color(255, 255, 255));
+        jbtn_eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminar.png"))); // NOI18N
+
+        jbtn_editar.setBackground(new java.awt.Color(255, 255, 255));
+        jbtn_editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/editar.png"))); // NOI18N
+
+        jtf_buscar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 21, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(181, 181, 181)
-                        .addComponent(jbtn_agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(167, 167, 167)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jtf_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36)
+                        .addComponent(jbtn_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(jbtn_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jbtn_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jbtn_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jbtn_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, Short.MAX_VALUE)
+                        .addGap(118, 118, 118))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(244, 244, 244)
-                        .addComponent(jLabel1)))
+                        .addGap(20, 20, 20)
+                        .addComponent(jScrollPane1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(174, 174, 174)
+                        .addComponent(jbtn_agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, Short.MAX_VALUE)
+                        .addGap(48, 48, 48)
+                        .addComponent(jbtn_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, Short.MAX_VALUE)
+                        .addGap(251, 251, 251)))
+                .addGap(27, 27, 27))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(266, 266, 266)
+                .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jbtn_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbtn_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbtn_agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbtn_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
-                .addGap(75, 75, 75))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(31, 31, 31)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jbtn_agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jbtn_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel2)
+                                .addComponent(jtf_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jbtn_buscar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(89, 89, 89))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jbtn_agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_agregarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jbtn_agregarActionPerformed
-
-    private void jbtn_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_eliminarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jbtn_eliminarActionPerformed
 
     private void jbtn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_buscarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbtn_buscarActionPerformed
 
-    private void jbtn_editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_editarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jbtn_editarActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JButton jbtn_agregar;
     public javax.swing.JButton jbtn_buscar;
     public javax.swing.JButton jbtn_editar;
     public javax.swing.JButton jbtn_eliminar;
     public javax.swing.JTable jt_tabla;
+    public javax.swing.JFormattedTextField jtf_buscar;
     // End of variables declaration//GEN-END:variables
 }
