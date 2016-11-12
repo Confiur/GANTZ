@@ -23,7 +23,9 @@ public class ControllerMain implements ActionListener{
         this.modelMain = modelMain;
         this.views = views;
         this.viewMain.jmi_productos.addActionListener(this);
-        this.viewMain.jmi_proovedores.addActionListener(this);
+        this.viewMain.jmi_proveedores.addActionListener(this);
+        this.viewMain.jmi_clientes.addActionListener(this);
+        this.viewMain.jmi_compras.addActionListener(this);
         initView();
     }
     
@@ -32,10 +34,17 @@ public class ControllerMain implements ActionListener{
         if(e.getSource()== viewMain.jmi_productos){
             jmi_productos();
         }
-        else if (e.getSource()==viewMain.jmi_proovedores)
+        else if(e.getSource()== viewMain.jmi_clientes){
+            jmi_clientes();
+        }
+        else if(e.getSource()== viewMain.jmi_proveedores){
             jmi_proveedores();
+        }
+        else if(e.getSource()== viewMain.jmi_compras){
+            jmi_compras();
+        }
+            
     }
-
     
     public void jmi_productos(){
         this.viewMain.setContentPane(views[0]);
@@ -43,10 +52,22 @@ public class ControllerMain implements ActionListener{
         this.viewMain.repaint();
     }
     
-    public void jmi_proveedores(){
+    public void jmi_clientes(){
         this.viewMain.setContentPane(views[1]);
         this.viewMain.revalidate();
         this.viewMain.repaint();
+    }
+    
+    public void jmi_proveedores(){
+    this.viewMain.setContentPane(views[2]);
+    this.viewMain.revalidate();
+    this.viewMain.repaint();
+    }
+    
+    public void jmi_compras(){
+    this.viewMain.setContentPane(views[3]);
+    this.viewMain.revalidate();
+    this.viewMain.repaint();
     }
 
     public void initView(){
