@@ -27,34 +27,101 @@ public class ViewMain extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel2 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jbtn_ingresar = new javax.swing.JButton();
+        jbtn_registrarse = new javax.swing.JButton();
+        jtf_usuario = new javax.swing.JTextField();
+        jtf_password = new javax.swing.JPasswordField();
+        jLabel1 = new javax.swing.JLabel();
+        jtf_id = new javax.swing.JFormattedTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jm_usuario = new javax.swing.JMenu();
+        jmi_compras = new javax.swing.JMenuItem();
+        jm_admin = new javax.swing.JMenu();
         jmi_productos = new javax.swing.JMenuItem();
         jmi_clientes = new javax.swing.JMenuItem();
         jmi_proveedores = new javax.swing.JMenuItem();
-        jm_ingresar = new javax.swing.JMenu();
-        jmi_compras = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        jmi_Pedido = new javax.swing.JMenuItem();
+        jmi_rCompra = new javax.swing.JMenuItem();
+        jmi_ingresar = new javax.swing.JMenuItem();
+        jm_mas = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(950, 500));
+
+        jLabel7.setText("-Ingrese los datos especificados-");
+
+        jLabel8.setText("Usuario");
+
+        jLabel9.setText("Contraseña");
+
+        jbtn_ingresar.setText("Ingresar");
+
+        jbtn_registrarse.setText("Registrar");
+
+        jLabel1.setText("ID");
+
+        jtf_id.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jbtn_registrarse)
+                .addGap(32, 32, 32))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(102, 102, 102)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel9)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(8, 8, 8))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(jLabel1)))
+                .addGap(27, 27, 27)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(jtf_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jbtn_ingresar)
+                        .addComponent(jtf_password, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtf_id, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(186, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jtf_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jtf_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jtf_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbtn_ingresar)
+                    .addComponent(jbtn_registrarse))
+                .addContainerGap())
+        );
 
         jMenuBar1.setBackground(new java.awt.Color(255, 255, 204));
 
-        jm_usuario.setBackground(new java.awt.Color(255, 0, 0));
-        jm_usuario.setText("Usuario");
-
-        jmi_productos.setText("Productos");
-        jm_usuario.add(jmi_productos);
-
-        jmi_clientes.setText("Clientes");
-        jm_usuario.add(jmi_clientes);
-
-        jmi_proveedores.setText("Proveedores");
-        jm_usuario.add(jmi_proveedores);
-
-        jMenuBar1.add(jm_usuario);
-
-        jm_ingresar.setText("Ventas");
+        jm_usuario.setText("Ventas");
+        jm_usuario.setEnabled(false);
 
         jmi_compras.setText("Ventas");
         jmi_compras.addActionListener(new java.awt.event.ActionListener() {
@@ -62,9 +129,45 @@ public class ViewMain extends javax.swing.JFrame {
                 jmi_comprasActionPerformed(evt);
             }
         });
-        jm_ingresar.add(jmi_compras);
+        jm_usuario.add(jmi_compras);
 
-        jMenuBar1.add(jm_ingresar);
+        jMenuBar1.add(jm_usuario);
+
+        jm_admin.setBackground(new java.awt.Color(255, 0, 0));
+        jm_admin.setText("Usuario");
+        jm_admin.setEnabled(false);
+
+        jmi_productos.setText("Productos");
+        jm_admin.add(jmi_productos);
+
+        jmi_clientes.setText("Clientes");
+        jm_admin.add(jmi_clientes);
+
+        jmi_proveedores.setText("Proveedores");
+        jm_admin.add(jmi_proveedores);
+
+        jMenuBar1.add(jm_admin);
+
+        jMenu1.setText("Compras");
+
+        jmi_Pedido.setText("Hacer Pedidos");
+        jMenu1.add(jmi_Pedido);
+
+        jmi_rCompra.setText("Reportes de Pedidos");
+        jMenu1.add(jmi_rCompra);
+
+        jmi_ingresar.setText("Ingresar Pedido");
+        jMenu1.add(jmi_ingresar);
+
+        jMenuBar1.add(jMenu1);
+
+        jm_mas.setText("+Mas");
+        jm_mas.setEnabled(false);
+
+        jMenuItem1.setText("Salir");
+        jm_mas.add(jMenuItem1);
+
+        jMenuBar1.add(jm_mas);
 
         setJMenuBar(jMenuBar1);
 
@@ -72,11 +175,17 @@ public class ViewMain extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 900, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(116, 116, 116)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(255, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 479, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(132, 132, 132)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(168, Short.MAX_VALUE))
         );
 
         pack();
@@ -112,6 +221,7 @@ public class ViewMain extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(ViewMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -122,12 +232,28 @@ public class ViewMain extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
-    protected javax.swing.JMenu jm_ingresar;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JPanel jPanel2;
+    public javax.swing.JButton jbtn_ingresar;
+    public javax.swing.JButton jbtn_registrarse;
+    public javax.swing.JMenu jm_admin;
+    public javax.swing.JMenu jm_mas;
     public javax.swing.JMenu jm_usuario;
+    public javax.swing.JMenuItem jmi_Pedido;
     public javax.swing.JMenuItem jmi_clientes;
     public javax.swing.JMenuItem jmi_compras;
+    public javax.swing.JMenuItem jmi_ingresar;
     public javax.swing.JMenuItem jmi_productos;
     public javax.swing.JMenuItem jmi_proveedores;
+    public javax.swing.JMenuItem jmi_rCompra;
+    public javax.swing.JFormattedTextField jtf_id;
+    public javax.swing.JPasswordField jtf_password;
+    public javax.swing.JTextField jtf_usuario;
     // End of variables declaration//GEN-END:variables
 }

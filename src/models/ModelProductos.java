@@ -12,7 +12,7 @@ import sax.DBConnection;
  * @author megam
  */
 public class ModelProductos {
-    public DBConnection conection = new DBConnection(3306,"localhost", "acme", "root", "1234");
+    public DBConnection conection = new DBConnection(3307,"localhost", "acme", "root", "1234");
     public DefaultTableModel tableModel = new DefaultTableModel(new String[]{"Id_producto","Producto","Descripcion","Precio compra","Precio venta","Existencias"},0);
     
     private int id_producto;
@@ -107,9 +107,9 @@ public class ModelProductos {
     }
     
     public void moveNext(){
+        poputable();
         conection.moveNext();
         setValues();
-        poputable();
     }
     
     public void initValues(){

@@ -81,7 +81,7 @@ public class ControllerProveedores implements ActionListener{
         }else if (a.getSource()==viewProveedores.jb_report){
             reporte();
         }
-    }
+    }   
     
     public void conAg(){
         modelProveedores.conection.executeUpdate("INSERT INTO proveedores (nombre, RFC, calle, No, colonia, ciudad, estado, nombre_contacto, telefono, e_mail) VALUES "
@@ -91,29 +91,20 @@ public class ControllerProveedores implements ActionListener{
     public void reporte(){
         try {
                 conectar();
-                System.out.println("Conect");
-                String dir = "C:\\Users\\Rodo\\Documents\\GANTZ 2.0\\GANTZ\\src\\reportes\\proveedoreReporte.jrxml";
-                System.out.println("Ruta");
+                String dir = "C:\\Users\\Rodo\\Documents\\EL XIDO\\GANTZ\\GANTZ\\src\\reportes\\proveedoreReporte.jrxml";
                 JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
-                System.out.println("Variable");
                 JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, null, getConn());
-                System.out.println("Variable de reporte, mostrando");
-                JasperViewer.viewReport(mostrarReporte);
-                System.out.println("Mostrar");
+                JasperViewer.viewReport(mostrarReporte, false);
             } catch (Exception e) {
                 System.out.println("Error");
             }
     }
     
     public void conectar() throws ClassNotFoundException, SQLException {
-
         try {
-
             Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/acme", "root", "1234");
-
         } finally {
-
         }
     }
     
@@ -210,16 +201,10 @@ public class ControllerProveedores implements ActionListener{
         clear();
     }
 
-    /**
-     * @return the conn
-     */
     public Connection getConn() {
         return conn;
     }
 
-    /**
-     * @param conn the conn to set
-     */
     public void setConn(Connection conn) {
         this.conn = conn;
     }

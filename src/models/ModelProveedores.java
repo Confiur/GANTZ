@@ -1,6 +1,5 @@
 package models;
 import java.sql.Connection;
-import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import sax.DBConnection;
 
@@ -188,30 +187,6 @@ public class ModelProveedores {
      */
     public void setName(String name) {
         this.name = name;
-    }
-    
-    public void moveNext(){
-        conection.moveNext();
-        setValues();
-        poputable();
-    }
-    
-    public void movePrevious(){
-        conection.movePrevious();
-        setValues();
-        poputable();
-    }
-    
-    public void moveFirst(){
-        conection.moveFirst();
-        setValues();
-        poputable();
-    }
-    
-    public void moveLast(){
-        conection.moveLast();
-        setValues();
-        poputable();
     }
     
     public void initValues(){

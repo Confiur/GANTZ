@@ -12,10 +12,10 @@ import sax.DBConnection;
  *
  * @author megam
  */
-public class ModelCompras {
-    public DBConnection conection = new DBConnection(3306,"localhost", "acme", "root", "1234");
+public class ModelVentas {
+    public DBConnection conection = new DBConnection(3307,"localhost", "acme", "root", "1234");
     public DefaultTableModel tableModel = new DefaultTableModel(new String[]{"Id_producto","Producto","Descripcion","Precio venta","Existencias"},0);
-    public DefaultTableModel tableModel1 = new DefaultTableModel(new String[]{"Producto","Precio","Cantidad"},0);
+    public DefaultTableModel tableModel1 = new DefaultTableModel(new String[]{"Producto","Cantidad","Precio","IVA","Subtotal"},0);
     
     private int id_producto;
     private String producto;
@@ -25,6 +25,7 @@ public class ModelCompras {
     private int existencias;
     private int cantidad;
     private double iva = 0.00;
+    private double subtotal = 0.00;
     private double total = 0.00;
     
     /**
@@ -121,7 +122,6 @@ public class ModelCompras {
         conection.executeQuery("SELECT id_producto, producto, descripcion, precio_venta, existencias FROM productos;");
         poputable();
         conection.moveNext();
-        setValues();
     }
     
     public void setValues(){
@@ -135,6 +135,8 @@ public class ModelCompras {
     public void setValues1(){
         producto = conection.getString("producto");
         precio_venta = conection.getDouble("precio_venta");
+        iva = conection.getDouble("iva");
+        subtotal = conection.getDouble("subtotal");
     }
     
     public void poputable(){
@@ -147,7 +149,7 @@ public class ModelCompras {
     public void poputable1(){
         while(conection.moveNext()){
             setValues1();
-            tableModel1.addRow(new Object[]{producto, precio_venta,cantidad});
+            tableModel1.addRow(new Object[]{producto, cantidad, precio_venta, iva, subtotal});
         }
     }
 
@@ -183,13 +185,13 @@ public class ModelCompras {
      * @return the total
      */
     public double getTotal() {
-        return total;
+        return subtotal;
     }
 
     /**
      * @param total the total to set
      */
     public void setTotal(double total) {
-        this.total = total;
+        this.subtotal = total;
     }
 }
